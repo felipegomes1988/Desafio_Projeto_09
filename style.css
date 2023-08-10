@@ -1,0 +1,320 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: 62,5%;
+
+  --color-base-white: #ffffff;
+  --color-base-light-blue: #387E96;
+  --color-base-dark-blue: #202024;
+
+}
+
+html, body, input {
+  font-family: 'Mulish', sans-serif;
+}
+
+body{
+
+  margin: 0 auto;
+  background-color: var(--color-base-white);
+
+}
+
+.page{
+  background-color: var(--color-base-white);
+
+}
+
+header {
+  width: 100%;
+  height: 7.2rem;
+
+  padding: 1.2rem 2.8rem;
+
+  display: flex;
+  align-items: center;
+
+  gap: 2.5rem;
+
+  background-color: var(--color-base-light-blue);
+  color: var(--color-base-white);
+
+}
+
+.logo {
+  width: 4rem;
+  height: 4rem;
+
+  background-color: var(--color-base-white);
+
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+#logo-img {
+
+  width: 2.4rem;
+  height: 2rem; 
+
+}
+
+header form {
+  flex: 1;
+}
+
+
+.input-wrapper label{
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.input-wrapper input {
+  width: 100%;
+  height: 4rem;
+  border-radius: .4rem;
+
+  padding: 1.2rem 1.4rem;
+
+  background: rgba(255, 255, 255, 0.20);
+
+  border-style: none;
+
+  color: var(--color-base-white);
+  font-size: 1.6rem;
+  font-weight: 600;
+
+}
+
+
+
+
+.input-wrapper input::placeholder {
+  color: var(--color-base-white);
+
+  font-size: 1.6rem;
+  font-weight: 600;
+
+}
+
+.avatar {
+  border-radius: 50%;
+  overflow: hidden;
+
+  width: 4.2rem;
+  height: 4.2rem;
+}
+
+main {
+  overflow: hidden;
+}
+
+main img{
+  width: 100%;
+}
+
+article {
+  padding: 3.2rem 2.6rem;
+}
+
+h1{
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 3.8rem;
+}
+
+.like-buttons{
+  display: flex;
+  gap: 1.2rem;
+  margin-top: .8rem;
+}
+
+.button{
+  width: 2.8rem;
+  height: 2.8rem;
+
+  background-color: var(--color-base-light-blue);
+  border-radius: 50%;
+
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:hover{
+  cursor: pointer;
+}
+.button img{
+  width: 1.6rem;
+  height: 1.6rem;
+}
+article p{
+  margin-top: 3rem;
+
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.5rem
+}
+
+aside {
+  padding: 2.6rem;
+}
+
+.article-wrapper {
+  margin-top: 3.2rem;
+
+  width: 38.2rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  gap: 1.6rem;
+}
+
+.article-wrapper:hover{
+  cursor: pointer;
+}
+
+  .article-wrapper img{
+
+    width: 15rem;
+    height: 9rem;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: .5rem;
+
+    transition-property: all;
+    transition-duration: 145ms;
+    transition-delay: 0;
+    transition-timing-function: ease-in-out;
+  }
+  
+  aside div:nth-child(3) img{
+    object-position: 50% 35%;
+  }
+
+  aside div:nth-child(6) img{
+    object-position: 50% 25%;
+  }
+
+  .article-wrapper section{
+    margin: 0;
+    padding: 0;
+  }
+  .article-wrapper section h2{
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 2.8rem; 
+
+  }
+
+  .article-wrapper section p{
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2.2rem;
+  }
+
+
+  footer{
+    height: 7.2rem;
+
+    background-color: var(--color-base-light-blue);
+
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: normal;
+    color: var(--color-base-white);
+
+    text-align: center;
+    padding: 2.6rem 1.6rem;
+  }
+
+  /*animations*/
+
+  .button:hover{
+    animation: jumpup .17s ease-out ;
+  }
+
+  .article-wrapper img:hover {
+    filter: hue-rotate(7deg) contrast(101%) saturate(200%);
+  
+    transform: scale(1.1);
+  }
+
+  @keyframes jumpup{
+    50%{
+      transform: translateY(-.5rem);
+    }
+  }
+
+  @keyframes grow{
+    50%{
+      transform: scale(110%);
+    }
+  }
+
+  /*responsividade*/
+
+  @media (min-width:1600px){
+
+    body{
+      width: 100%;
+    }
+
+    .page{
+      display: grid;
+      grid-template-areas: "A A A" "B B C" "D D D";
+    }
+
+    header{
+      grid-area: A;
+    }
+    
+    main {
+      grid-area: B;
+      margin-left: 10rem;
+    }
+
+    .button img{
+      padding: 0;
+    }
+
+    aside{
+      grid-area: C;
+      margin-right: 10rem;
+    }
+
+    footer{
+      grid-area: D;
+    }
+
+    main img{
+      padding: 3.2rem 2.6rem 0;
+    }
+
+    .title-wrapper{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+
+
+    
+  }
+  
